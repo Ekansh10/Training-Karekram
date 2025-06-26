@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <script>
+        // function Person(){}
+
+        // Person.prototype = {
+        //     constructor : Person,
+        //     name : "Ekansh",
+        //     age: 25,
+        //     job : "SDE",
+        //     friends : ["Ram", "Shyam"],
+        //     sayName : function (){
+        //         console.log(this.name);
+        //     }
+        // };
+
+        // UPDATED CODE :
+        // This is called Constructor-Prototype Pattern
+        function Person(name, age, job){
+            this.name = name;
+            this.age = age;
+            this.job = job;
+            this.friends = ["Ram", "Shyam"];
+        }
+
+        Person.prototype = {
+            constructor : Person,
+            sayName : function (){
+                console.log(this.name);
+            }
+        };
+
+        var p1 = new Person();
+        var p2 = new Person();
+
+        p1.friends.push("Jay"); // it is changing the prototype
+
+        console.log(p1.friends);
+        console.log(p2.friends); // Thus friends of p2 is referred from prototype. and thus Jay will also be friend of p2 
+
+        // Should not store reference types like array or object in prototype, apart from common methods which are reference method
+        // Rather store them in constructor scope
+        // Distinct and static applies to constructor and common and dynamic reference applies to prototypes
+
+
+
+        
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

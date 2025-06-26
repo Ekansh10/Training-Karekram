@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <script>
+        console.log("--writing Person prototype clean way ---")
+        function Person(){
+
+        };
+        // Person.prototype = { // assigning new object to the Person.prototype
+        //     constructor : Person, // assign constructor field in the object of prototype when assigning prototype using object literal notation
+        //     name : "HUHU",
+
+        //     shoutName : function(){
+        //         console.log(this.name);
+        //     }
+        // };
+        
+        // var friend = new Person(); // Instances do not follow empty prototype. So when this instance was created its SCA was = [friend, window], cause prototype was empty it did not checked the prototye. To avoid this add something in the SCA.
+        // This will not work as the prototype is empty but declaring friend after prototype declaration will work. (declare friend after Person.prototype = {})
+        
+        Person.prototype = { // assigning new object to the Person.prototype
+            constructor : Person, // assign constructor field in the object of prototype when assigning prototype using object literal notation
+            name : "HUHU",
+
+            shoutName : function(){
+                console.log(this.name);
+            }
+        };
+        // Person.prototype.sayHi = function(){
+        //     console.log("Say Hi");
+        // }
+
+        var friend = new Person();
+        console.log(friend.name);
+        friend.shoutName();
+        // friend.sayHi();
+
+
+        console.log(friend.hasOwnProperty("name")); // locally checking if the name property is present, friend scope
+        console.log("name" in friend) // it is an iteration operator, checking all the scopes in SCA for the identifier, but do not searches in window/global scope
+
+        function hasPrototypeProperty(object, prop){
+            return !object.hasOwnProperty(prop) && (prop in object);
+        }
+
+        console.log(hasPrototypeProperty(friend, "name"));
+        friend.name = "Ekansh"; // added locally so hasOwnProperty is true
+        console.log(hasPrototypeProperty(friend, "name"));// Thus it returns false
+         
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

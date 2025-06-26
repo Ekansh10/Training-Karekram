@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <script>
+        class Rectangle{
+            getDetails = function(){
+                console.log("The length is " + this.length + " The width is " + this.width);
+            } // all instances gets their own getDetails here. Does not go in the prototype
+
+            getStuff() { // This function goes in the prototype
+                console.log(this.length); 
+            }
+
+
+            constructor(length, width){
+                this.length = length;
+                this.width = width;
+            }
+        }
+
+        var rect = new Rectangle(2, 3);
+        console.log(typeof Rectangle.prototype.getStuff); // function
+        console.log(typeof Rectangle.prototype.getDetails); // undefined
+
+        console.log(rect.hasOwnProperty("getDetails"));
+        console.log(rect.hasOwnProperty("getStuff"));
+
+        rect.getDetails();
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

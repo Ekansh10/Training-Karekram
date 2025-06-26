@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <script>
+        // Whatever we write in a constructor it is bound to get static cloned in the instances
+        // Prototype is a shared memory/scope available for 'dynamic reference' for all the instances
+        function Person(){ // it have two scope one braces, i.e. constructor and prototype{}, excluding argumnets and global scope
+                            // prototype = {name, age, job, sayName()}
+        }
+        // distict properties in constructor and common methods should be parked in the prototype
+        Person.prototype.name = "Ekansh";
+        Person.prototype.age = 23;
+        Person.prototype.job = "nothing";
+        Person.prototype.sayName = function(){
+            console.log(this.name);
+        };
+
+        var person1 = new Person();
+        person1.sayName(); // SCA = [person1, Person.prototype]  will search in person Prototype
+        // They dont have name as a local element but they can dynamically refer to the Person Prototype
+        console.log(person1.name); // THIS WILL work cause SCA 
+
+        var person2 = new Person();
+        person2.sayName();
+
+        console.log(person1.sayName == person2.sayName); //true cause the method is not duplicated here as that of object based or constructor cloning in constructor pattern
+
+        console.log(Person.prototype.isPrototypeOf(person1));
+        console.log(Person.prototype.isPrototypeOf(person2));
+
+        if (Object.getPrototypeOf){
+            console.log(Object.getPrototypeOf(person1) == Person.prototype);
+            console.log(Object.getPrototypeOf(person1).name);
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

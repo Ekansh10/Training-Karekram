@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <script>
+        function ab(){
+            var res = new Array();
+
+            for(var i =0; i<10; i++){
+                res[i] = function(){
+                    return i;
+                }();
+            }
+            return res;
+        }
+
+        var fn = ab();
+        console.log(fn);
+        for(var i = 0;i <fn.length; i++){
+            document.write(fn[i] + "<br />") // it was array of functions which was called here in the document.write
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

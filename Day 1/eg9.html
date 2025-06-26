@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Closure eg</title>
+    <script>
+        var name = "This window";
+        var object = { // Types of creating objects: new(constructor) and object literal notation
+            name : "My object",
+            getNameFn : function(){
+                var x = this; // CORRECTED LINE : This x var points to the 'object' scope, 
+                console.log(typeof x);
+                return function(){
+                    return x.name; // this keyword under the closure, it points to the scope where the last identifier retrieved, changes the search pattern its just jumping to the global scope, SCA = [window], this is another exception
+                };
+            }
+
+        };
+        console.log(object.name);
+        console.log(object.getNameFn()());
+        // first search is for log function
+        // window.console.log, here window is the global object, console is also an object, log is the function within the console object which was within window object itself
+        // .log(this.name)
+        // here this keyword is pointing to the window itself, so the name = "This window" will be logged
+        // this keyword is implicitly available to every scope
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <script>
+        a(); // will execute even if the a()is declared after this line of code. Because a() is a function declaration hoisting
+         //styles of declaring a function:  Funcion declartion hoisting and Function Expression
+        function a(){ // fuction declaration hoisting
+            var w = "jay"
+            console.log('function a executed');
+        }
+        a();
+        console.log(w); // we cant access w cause function is still a lexical scope i.e. we cannot access variables of the function outside the function unless it is returning that variable
+
+
+        b(); // this will throw Reference error
+        // b is the element that knows the address of the following anonymous function...
+        b = function(){ // Anonymous Function(lacks an identifier), Function expression, this will not get hoisted
+            console.log('function b executed');
+        }
+        b();
+
+        // We should avoid hoisting and always use function expressions 
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

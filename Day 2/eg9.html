@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Prototype chaining</title>
+    <script>
+        function SuperType(){ // prototype of SuperType is empty at this point
+            this.property = true;
+        }
+
+        SuperType.prototype.getSuperValue = function(){
+            return this.property;
+        };
+
+        function SubType(){
+            this.subproperty = false;
+        }
+
+        // object of subtype can have access to subtype.prototype and supertype.prototype as well if idemtifier is not in the SubType.prototype
+        SubType.prototype = new SuperType();
+        console.log(SubType.prototype);
+        SubType.prototype.getSubValue = function(){
+            return this.subproperty;
+        }
+
+        SubType.prototype.getSuperValue = function (){
+            return false;
+        }
+
+
+        // SubType.prototype = {
+        //     getSubValue : function (){
+        //         return this.subproperty;
+        //     },
+
+        //     someOtherMethod : function(){
+        //         return false;
+        //     }
+        // }; 
+        // Now after assigning this object to the Subtype.prototype the getSuperValue is not in the object thus the instance will not be able to access the 
+
+        // After prototype Chaining the prototype should not be given a new object as it will overwrite the new SuperType(); object.
+        // Inititalize prototype first i.e. SubType.prototype = {} and then SubType.prototype = new SuperType(); , creating a scope chain
+
+        var instance = new SubType(); 
+        console.log(instance.getSuperValue());// SCA = [instance, SubType.prototype, SuperType.prototype]
+        // but after adding gerSuperValue in SubType prototype then SCA = [instance, SubType.prototype]
+        console.log(instance instanceof Object);
+        console.log(instance instanceof SuperType);
+        console.log(instance instanceof SubType);
+
+        console.log(Object.prototype.isPrototypeOf(instance));
+        console.log(SuperType.prototype.isPrototypeOf(instance));
+        console.log(SubType.prototype.isPrototypeOf(instance));
+
+
+
+        // Correct Order is to 
+        // Initialize the prototype, Chain them, at last create the object 
+        // It breaks for the initialization with object literal notation i.e Subtype.prototype = {}, but dont break when Subtype.prototype.getDetails = function (){}
+        // As it appends method to the prototype does not overwrite the prototype using object literal notation object
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

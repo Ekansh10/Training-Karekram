@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <script>
+        var color = "blue";
+        function changeColor(){
+            var anotherColor = "red";
+            
+            function swapColor(){
+                var tempColor = anotherColor; // identifier search goes from narrow scope to wider scope.
+                // it finds anotherColor in the following order: [swapColor(), changeColor()].. this array is called SCA -> Scope Chain Augmentation(order in which scopes will be searched for the element)
+                // Activation object is the very first scope in SCA, here it is swapColor()
+
+                anotherColor = color; // identifier search for anotherColor and Color, SCA for anotherColor[swapColor(), changeColor()], SCA for color[swapColor(), changeColor(), window]
+
+                color = tempColor;
+            }
+            swapColor();
+        }
+        changeColor();
+
+        console.log(color);
+
+
+        // window is the global scope always
+        // window is the least privelaged and swapColor is highest
+        // More privelage = More memory
+        // wider scope cannot access narrower scope unless narrower scope is returning something
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

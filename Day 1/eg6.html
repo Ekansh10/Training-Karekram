@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <script>
+        var a = 90; // Public
+        function Person(){ // {} these braces is called constructor in js
+            var z = 20; // private
+            this.x = 100;  // priviledged
+            this.y = 200; // priviledged, available only to the instances, whereas var makes in private
+        }
+        
+        var inst1 = new Person(); // value of x and y is not cloning because x and y is private in Person. Therefore use this keyword
+        console.log(inst1.x);
+        console.log(typeof inst1);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

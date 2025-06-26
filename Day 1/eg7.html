@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <script>
+        function add(a, b){ // here there is arguments array : [a, b], helps to inject(bring something outside of the scope to inside of the scope) identifiers in the scope
+            var c = a+b;
+            console.log(c);
+            console.log(arguments) // it is one of the Function Internals
+            console.log(typeof arguments);
+        }
+
+        add(20,40);
+        console.log(add.arguments); // it'll say null, cause its implicitly available within the function
+
+
+
+
+        function Person(name){
+            this.setName = function(value){ // Priviledge  method lives in the same scope as that of private entity and exposes the private entities to their instances
+                name = value;
+            }
+            this.getName = function(){
+                return name;
+            }
+        }
+
+        var person = new Person("Ekansh");
+        console.log(person.getName()); // this is giving the dynamically created name entity which is private using var keyword
+        person.setName("Gautam");
+        console.log(person.getName());
+        console.log(person.name); // this says its undefined as name is not privileged by default, its private. Function args are private
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

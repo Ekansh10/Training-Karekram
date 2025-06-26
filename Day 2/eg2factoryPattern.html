@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <script>
+        function createPerson(name, age, job){
+            var o = new Object();
+            o.name = name;
+            o.age = age;
+            o.job = job;
+            o.sayName = function(){
+                console.log(this.name);
+            };
+            return o;
+        }
+
+        
+
+        var person1 = new createPerson("Ekansh", 20, "Software Engineer");
+        var person2 = new createPerson("Jay", 30, "Architect");
+
+
+
+        person1.sayName();
+        person2.sayName();
+
+        console.log(person1);
+        console.log(typeof person1);
+        // Rules of Factory Pattern:
+        // You should have an object in the function
+        // Storing data into the object
+        // the object should finally be returned
+        // When you do a common task, the method is duplicate in each object, 100 person 100 sayname methond
+        // Issue with Factory Pattern is duplication of methods with common functionalities.
+        console.log(person1 === person2);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

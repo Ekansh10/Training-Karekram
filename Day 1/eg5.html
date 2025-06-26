@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <script>
+        function f1(){
+            var x = 100;
+
+            with(document.location){ // with is the only conditional statement with lexical scope
+                var x = 500; // this x will not get hoisted
+            }
+            // with will hijack the SCA and attach from the front of SCA thus, with will be an activation object
+            console.log(x); // SCA = [with, f1(), window]
+
+            // with statement will cause performance loss
+            // with statement is an antipattern in modern day
+        }
+        f1();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

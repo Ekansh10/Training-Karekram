@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <script>
+        // the concept of "prototype" refers to a fundamental mechanism for inheritance and sharing properties and methods among objects.
+        function createPerson(name, age, job){ // prototype is a function internal, constructor as well and previously learned arguments array
+            var o = new Object();
+            o.name = name;
+            o.age = age;
+            o.job = job;
+            return o;
+        } // look demo.html of day 1 as basic constructor pattern was discussed without prototype
+
+        createPerson.prototype.sayName = function(){
+                console.log(this.name);
+            };
+
+        var person1 = new createPerson("Ekansh", 20, "Software Engineer");
+        var person2 = new createPerson("Jay", 30, "Architect");
+
+
+
+        person1.sayName();
+        person2.sayName();
+
+        console.log(person1);
+        console.log(typeof person1);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

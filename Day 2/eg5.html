@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <script>
+        function Person(){
+
+        };
+
+        Person.prototype.sayName = function(){
+            console.log("prototype sayname");
+        }
+
+        var p1 = new Person();
+        p1.name = "Jay";
+        p1.sayName = function(){
+            console.log("sayname is invoked");
+        }
+
+        var p2 = new Person();
+
+        p1.sayName(); // SCA = [p1, Person.prototype] // an instance can override the prototype
+        p2.sayName(); // will go to Person.prototype as there is no local p2.sayNAme in local scope.
+
+
+        delete p1.sayName;
+        p1.sayName(); // will search in the prototype scope as locally we deleted sayName function
+
+        console.log(typeof p1.name);
+
+        console.log("----New Example----");
+
+
+        function myDate(){
+            this.getMicroSeconds = function(){ // this kind of functions are stored in the constructor not in the prototype and locally referred
+                console.log("locally report the MicroSeconds");
+            };
+        }
+
+        myDate.prototype.getHours = function(){// this kind of functions are stored in the prototype and dynamically referred
+                console.log("report the Hours");
+            };
+        myDate.prototype.getMinutes = function(){
+                console.log("report the Minutes");
+            };
+        myDate.prototype.getSeconds = function(){
+                console.log("report the Seconds");
+            };
+
+        var date = new myDate();
+        date.getHours();
+        date.getMicroSeconds();
+        console.log(typeof date.getHours);
+        console.log(typeof myDate.prototype.getHours);
+
+
+        console.log("-- Next Example --");
+        
+
+        // String is the native prototype, and populating our  own methods to the native prototype is called native prototype pattern
+        String.prototype.startsWith = function(text) {
+            return this.indexOf(text) == 0;
+        }
+
+        var msg = "Hello World!";
+        console.log(msg.startsWith("Hello")); // SCA = [msg, String.prototype]
+
+
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

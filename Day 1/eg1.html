@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        title</title>
+    <script>
+
+
+        if(true){ // no lexical scope(conditional statements or loops). It is an antipattern in js
+            var x =10; // x is here hoisted(goes to the top of the script),  and now the x is in the global scope(window)
+            // but const and let will give the error
+        }
+        console.log(x);
+
+        function abc(){ // functions and objects are called lexical scope
+            var y = 20;
+        }
+        abc();
+        console.log(y); // this will give undefinded as the var y is declared in the lexical scope
+        // var behaves differently in lexical and non lexical scopes
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

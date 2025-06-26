@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>prototype chaining</title>
+    <script>
+        function SuperType(){
+            this.colors = ["red", "yellow", "blue"];
+        }
+
+        function SubType(){
+
+        }
+
+        SubType.prototype = new SuperType();
+
+        var inst = new SubType();
+        inst.colors.push("black");
+        console.log(inst.colors);
+
+        var inst2 = new SubType();
+        console.log(inst2.colors);
+
+        
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

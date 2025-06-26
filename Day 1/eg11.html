@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>GC Basics</title>
+    <script>
+        // During internet explorer era there was this concept called reference counting
+        // Waring to the developer that there are references to the object and should not be deleted
+
+        obj1 = new Object();
+        obj2 = obj1;
+        obj1 = null; // First we dereference and then we delete
+        delete obj1;
+        console.log(typeof obj1);
+
+        // Current era browsers uses concept called Mark and Sweep(google it)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
