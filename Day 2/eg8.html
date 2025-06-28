@@ -12,8 +12,7 @@
             getStuff() { // This function goes in the prototype
                 console.log(this.length); 
             }
-
-
+            // Cant assign variables like flag = true here so to think if the variable went to prototype but it goes in constructor duplicating it across objects
             constructor(length, width){
                 this.length = length;
                 this.width = width;
