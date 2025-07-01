@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Async-Await</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        async function LoadData(params) {
+            // var response = await GetData(); // no .then method. GetData() will return a resolved promise
+            // await will suspend, and if the promise is resolved then only response can be accessed.
+            // if promise not resolved then will throw error. Use try catch putting await inside the try block
+            // helps you to pause and resume
+
+            try{
+                var response = await GetData();
+                console.log(response.data);
+            }
+            catch(error){
+                console.log("Error: "+ error);
+            }
+            // Dom Manipulation
+
+        }
+        LoadData();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

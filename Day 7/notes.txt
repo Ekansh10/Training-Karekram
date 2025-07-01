@@ -11,3 +11,8 @@ Ajax
 -> JSON
 -> DOM
 
+Axios and promises
+
+Async Await: can be used with any function that returns a promise
+
+Fetch API : within the browser functionality returning a promise which needs to be first jsonify and then this .json() function will return another promise to read the data

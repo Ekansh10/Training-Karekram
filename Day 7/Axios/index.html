@@ -6,13 +6,13 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
 
-    <script src="script.js"></script>
     <script>
         console.log("Started..");
         var aPromise = GetData();
         aPromise.then(function(response){
             console.log("Promise Resolved");
             console.log(response.data);
+            // DOM Manipulation
         },
         function(err){
             console.log(err);
