@@ -27,7 +27,7 @@ public class Sol51 {
         binaryConversion(n, s+"1");
     }
 
-    static void binaryConversion2(int n){ // iterative approach 
+    static void binaryConversion2(int n){ // iterative approach using array
         int[] arr = new int[n];
         for(int i = 0;i <n; i++){
             arr[i] = 0;
@@ -36,13 +36,13 @@ public class Sol51 {
         
     }
 
-    static int resolveExp(String s){
+    static int resolveExp(String s){ // complete entire calculator with sin, log and exponent expressions along with brackets and * and / operators also use nodes to construct a expression tree
         Stack<Integer> numst = new Stack<>();
         Stack<Character> opst = new Stack<>();
         String tmpNum = "";
         int globalNum = 0;
         for(int i =0; i<s.length(); i++){
-            if(s.charAt(i) == '+' || s.charAt(i) == '-'){
+            if(s.charAt(i) == '+' || s.charAt(i) == '-' || s.charAt(i) == '/' || s.charAt(i) == '*'){
                 int num = Integer.parseInt(tmpNum);
                 tmpNum = "";
 
@@ -51,6 +51,11 @@ public class Sol51 {
                 if(opst.isEmpty()){
                     opst.push(s.charAt(i));
                 }else{
+                    if(opst.peek() == '+' || opst.peek() == '-'){
+
+                    }else{
+
+                    }
                     int num2 = numst.pop();
                     int num1 = numst.pop();
                     char op = opst.pop();
@@ -78,4 +83,6 @@ public class Sol51 {
             return num1 - num2;
         }
     }
+
+    // Longest path amongst leaf node in binary tree is called diameter of the tree
 }
