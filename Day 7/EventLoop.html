@@ -4,11 +4,32 @@
     <meta charset="UTF-8" />
     <title>Evernt Loop</title>
     <script>
-        console.log("Before Timeout");
-        setTimeout(function(){
-            console.log("SetTimeout");
-        }, 2000); // can give time in milliseconds 2000 = 2 secs
-        console.log("After Timeout");
+        // Eg 1
+        // console.log("Before Timeout");
+        // setTimeout(function(){
+        //     console.log("SetTimeout");
+        // }, 2000); // can give time in milliseconds 2000 = 2 secs
+        // console.log("After Timeout");
+
+
+        // Eg 2
+        setTimeout(function a() {console.log("function a() ran");}, 1000); // this will go third
+        setTimeout(function c() {console.log("function c() ran");}, 0); // this will go first in the callback queue as its timeout is the lowest amongst others
+        setTimeout(function b() {console.log("function b() ran");}, 500); // this will go second
+
+        // Even if the time difference for the two different setTimeout functions is just 1 millisecond the lower setTimeout function will be going into the call stack first
+        function d() {
+            console.log("function d() ran");    
+        }
+        d();
+
+
+
+
+
+        
+
+
     </script>
 </head>
 <body>

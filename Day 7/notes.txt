@@ -4,4 +4,10 @@ SPA, PWA
 AJAX
 Service workers in HTML 5
 
+Ajax 
+-> XMlHttp Request (Web API)(in short XHR)
+        --> open(), send()
+-> Javascript
+-> JSON
+-> DOM
 

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <script src="getData2.js"></script>
+    <script>
+        // Promises have their own queue microtask queue having higher priority
+        // WebApis have their own queue macrotask queue having lower priority compared to promises queue
+        // both of them are callback queue but priority differs
+        var aPromise = GetData(); // here GetData() synchronously returning a promise. Promise is a ES6 feature. They are different from WenApis
+        aPromise.then(function(response){
+            console.log(response);
+        },
+        function(err){
+            console.log(err);
+        });
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
