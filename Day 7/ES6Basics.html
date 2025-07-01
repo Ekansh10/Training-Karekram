@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>ES6 Basics</title>
+    <script>
+        // let x =30; // no redeclaring in same scope
+        // let x = 40;
+
+        console.log(x);
+        // console.log(y); // will throw error as its let y which is not hoisted
+
+        var x; // hoisted
+
+        let y;
+
+        x = 10; // this will not print x as this line is not hoisted
+
+        const player = {name : "Ekansh"};
+        // can change the props of the const object
+        player.name = "jay";
+        // but cant assign new object as the address of the new object is different that of previous one
+        // player = {}
+
+
+
+        // Spread operator
+        var cars = ["bmw", "porshe", "audi"];
+        var moreCars= ["tata", "mahindra"];
+        var allCars = [...cars, ...moreCars]; // ... is called the spread operator, can be applied to objects
+
+        console.log(allCars);
+
+
+        var person = {name : "ekansh", age: 20, sports: "Basketball"};
+        var person1 = {...person, sports: "baseball"}; // order of using spread operators is from left to right so the last write wins
+        var person1 = { sports: "baseball", ...person,}; // this will show baskeball cause last write is of the spread operator
+
+
+        console.log(person);
+        console.log(person1);
+
+
+
+        
+        // Destructuring - Arrays and Objects
+        var cars = ["BMW", "Merc", "audi"];
+        // var firstCar, secondCar;
+        // firstCar = cars[0];
+        // secondCar = cars[1];
+
+        var[firstCar, secondCar] = cars; // this is same as var[firstCar, secondCar] = ["BMW", "Merc", "audi"];
+
+        console.log(firstCar);
+        console.log(secondCar);
+
+        // var[firstCar, ,(this comma here will skip the second ele of cars) secondCar]
+
+
+        function printPlayer(p){ // this function can do p.name = "jay", as we are passing object
+            p.name = "jay"
+            console.log(p.name + " plays " + p.sports);
+        }
+
+        printPlayer(person);
+
+        function onlyPrintPlayer({name, sports}){ // this will now only take the property instead of complete object, this is called destructuring
+            console.log(name + " plays " + sports);
+        }
+        onlyPrintPlayer(person1)
+
+
+        var {name: naam , sports} = person1; // this will create local var name and sports with the value of the objects properties of person1
+        // these properties are case sensitive
+        console.log(naam);
+
+
+        var newPlayer = {
+            name : "hai",
+            details: {
+                worldRanking : {
+                    rank : 20
+                }
+            }
+        }
+
+        var {details: { worldRanking: { rank } }} = newPlayer;
+        console.log(rank);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
