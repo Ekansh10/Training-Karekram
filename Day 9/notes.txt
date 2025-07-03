@@ -48,3 +48,6 @@ Functional Component returns some jsx
 Types of Hooks: (React version 16.8 onwards)
 -> State Hooks (useState method) to attach state to your components
 -> Async Hooks (useEffect method)
+
+link component avoids reloading page
+

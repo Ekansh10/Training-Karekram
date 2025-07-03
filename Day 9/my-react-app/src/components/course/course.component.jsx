@@ -1,4 +1,5 @@
 import React, { Component, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default class Course extends Component {
   state = {currentLikes : this.props.coursedetails.likes};
@@ -20,7 +21,10 @@ export default class Course extends Component {
     return (
     <div className="col-md-4">
       <div className="card">
+        <Link to ="/coursedetails">
         <img src={this.props.coursedetails.imageUrl} className="card-img-top" alt="" width="200px"/>
+        </Link>
+        
         <h1 className="card-title">{this.props.coursedetails.title}</h1>
         <p className="card-text">₹ {this.props.coursedetails.price}</p>
         <p className="card-text">Rating : {starArray}</p>
