@@ -12,3 +12,9 @@ Bootstrap grid system
 
 Font Awesome CDN
 
+Props are read-only
+State is the private to the component instance
+
+React only understand props and states for data
+State is created at component level
+
