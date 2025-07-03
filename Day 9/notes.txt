@@ -35,3 +35,10 @@ Updating Phase Keys = 1 2 3 4 5
 but for component 2 the state is changed(can be deleted or a new component migth be added)
 so only the component 2 will be updated in the Actual DOM and the render() will be called 
 React will internally manipulate the Actual DOM
+
+Functional Components: Using function to define a component, a lightweigth way of creating components
+Hooks gives power to functional component to use of state and other React features within functional components, eliminating the need for class components to manage state and lifecycle methods
+there is lesser footprint compared to class based component
+
+In functional component dont need to inherit and dont need to have render method.
+so when we return then the render method is called
