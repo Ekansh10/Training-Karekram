@@ -9,9 +9,14 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 // 
 function App(){
   return(
-    <BrowserRouter>
-    <Link to="/"> Courses </Link> |<Link to="/posts"> Posts </Link> |
-    <Link to="/counter"> Counter </Link>
+    <BrowserRouter>  
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <Link class="navbar-brand" to="/">Courses</Link> |
+        <Link class="navbar-brand" to="/posts">Posts</Link> |
+        <Link class="navbar-brand" to="/counter">Counter</Link>
+      </div>
+    </nav>
     <Routes>
       <Route path="/" Component={ListOfCourses}/>
       <Route path="/posts" Component={Posts}/>
