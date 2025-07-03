@@ -64,7 +64,7 @@ export default class ListOfCourses extends Component {
     return (
       <div className="row g-5">
         {this.courses.map(course => (
-          <Course coursedetails={course} />
+          <Course coursedetails={course} key={course.id}/> // here we given a key for the component
         ))}
       </div>
     );

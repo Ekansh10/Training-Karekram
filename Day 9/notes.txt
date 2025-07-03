@@ -18,3 +18,20 @@ State is the private to the component instance
 React only understand props and states for data
 State is created at component level
 
+Mounting phase where calling the render() for the first time
+Then comes Updating phase calling render() of the component each time the state of that component changes. This happens for all components
+
+React creates a virtual DOM.
+from virtual components to virtual DOM to actual DOM
+
+Optimization techniques are done on virtual DOM
+
+In Updating Phase new virtual DOM is created. Then the difference within the current snapshot of virtual DOM and previous snapshot of virtual DOM is calculated and the only difference is updated in the Actual DOM
+Diffing alogrithm in React
+Each child in a list should have a unique "key" prop. Key acts as an unique identifier in virtual DOM.
+
+Mounting Phase Keys = 1 2 3 4 5
+Updating Phase Keys = 1 2 3 4 5
+but for component 2 the state is changed(can be deleted or a new component migth be added)
+so only the component 2 will be updated in the Actual DOM and the render() will be called 
+React will internally manipulate the Actual DOM

@@ -6,7 +6,7 @@ export default class Course extends Component {
     console.log("U Clicked !");
     // this.state.currentLikes++;// states are immutable
      
-    this.setState({currentLikes : this.state.currentLikes+1}); // it assigns new object to currentLikes state
+    this.setState({currentLikes : this.state.currentLikes+1}); // it assigns new object to currentLikes state for every object
     console.log(this.state.currentLikes);
   }
 
