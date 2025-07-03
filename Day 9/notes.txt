@@ -1,0 +1,14 @@
+App component is the starting component so keep it minimal
+
+SOLID
+Atomic Design Pattern
+
+Keep components as singular as possible
+render() should return something
+
+Bootstrap is a toolkit, gives Bootstrap components
+in html its class in Dom its className
+Bootstrap grid system
+
+Font Awesome CDN
+

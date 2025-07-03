@@ -1,0 +1,23 @@
+Promise Chaining: Collection of .then, promises that can be made one after another
+.then of each Promise depends on the pervious promise
+
+Second param of .then(Local error catching) vs catch block(Global error catching)
+ chain goes on if any promise gets broken in the middle in second param of .then
+ chain breaks and the error is addressed in the catch block
+
+ Task Queue vs MicroQueue
+
+ Arrow Function (Context Binding)
+
+ with TS we have compile time errors to avoid runtime errors unlike JS
+
+ Strong typing, annotations, Superset of JS so all functionalities of the JS
+ Generics, Optional params
+
+ React helps to make fast components
+ Use reusable components
+ components are give data as props
+ Componets are composable(hierarchy of components)
+ 
+
+ 
