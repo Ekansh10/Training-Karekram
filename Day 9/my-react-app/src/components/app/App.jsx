@@ -18,12 +18,13 @@ import Posts from "../posts/posts";
 // }
 
 function App(){ // App as a functional component()
-  return (
-      <div>
-        <Counter />
-        <Posts />
-      </div>
-    )
+  // return (
+  //     <div>
+  //       <Counter />
+  //       <Posts />
+  //     </div>
+  //   )
+  return <ListOfCourses />
 }
 
 // var App = () => <div> // can be done this ways as well

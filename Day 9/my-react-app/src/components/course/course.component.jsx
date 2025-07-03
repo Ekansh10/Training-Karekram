@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 
 export default class Course extends Component {
   state = {currentLikes : this.props.coursedetails.likes};
@@ -36,3 +36,36 @@ export default class Course extends Component {
     );
   }
 }
+
+// function Course(){
+//   stars = this.props.coursedetails.likes;
+//   const[likes, setLike] = useState(stars);
+//   useEffect(function(){
+
+//   }, [likes])
+  
+//   let starArray = [];
+//   for (let i = 0; i < stars; i++) {
+//     starArray.push(<i className="fa-solid fa-star" key={i} style={{ color: "gold" }}></i>);
+//   }
+
+//   return (
+//     <div className="col-md-4">
+//       <div className="card">
+//         <img src={this.props.coursedetails.imageUrl} className="card-img-top" alt="" width="200px"/>
+//         <h1 className="card-title">{this.props.coursedetails.title}</h1>
+//         <p className="card-text">₹ {this.props.coursedetails.price}</p>
+//         <p className="card-text">Rating : {starArray}</p>
+
+//         <button
+//         onClick={()=>setLike(likes+1)
+//         }
+//         className="btn btn-primary" 
+//         >
+//         <i className="fa-solid fa-thumbs-up" width="100px" height="10px"></i> {likes}</button>
+//       </div>
+//     </div>
+//     );
+// }
+
+// export default Course;
