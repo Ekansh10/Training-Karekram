@@ -8,7 +8,8 @@ function Posts(){
         .get("https://jsonplaceholder.typicode.com/posts")
         .then(res => setData(res.data)); // here state changes and the jsx is rendered again
         
-    }, [data]); // this [data] dependency list say if the data is fetched should the api call be made again for data. it says data change hua to vapas api call karo
+    }, []); // this [data] dependency list say if the data is fetched should the api call be made again for data. it says data change hua to vapas api call karo
+    // if [] dependency list is empty it will not re-request api
 
     return ( // 2. jsx is rendered, li will not be during mounting phase.
         <div>
