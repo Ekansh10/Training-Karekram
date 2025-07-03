@@ -42,3 +42,9 @@ there is lesser footprint compared to class based component
 
 In functional component dont need to inherit and dont need to have render method.
 so when we return then the render method is called
+
+Functional Component returns some jsx
+
+Types of Hooks: (React version 16.8 onwards)
+-> State Hooks (useState method) to attach state to your components
+-> 
