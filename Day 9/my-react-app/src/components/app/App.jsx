@@ -2,6 +2,8 @@ import React from "react";
 import ListOfCourses from "../listofcourses/listofcourses";
 import FMessage from "../functional/message.functional";
 import Counter from "../functional/counter";
+import Posts from "../posts/posts";
+
 // class App extends React.Component {
 //   render() {
 //     // return <ListOfCourses />;
@@ -19,6 +21,7 @@ function App(){ // App as a functional component()
   return (
       <div>
         <Counter />
+        <Posts />
       </div>
     )
 }

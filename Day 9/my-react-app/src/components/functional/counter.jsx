@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from "react"; // to define the state of the component
 
 var Counter = () => {
     const[count, setCount] = useState(100); // 100 is the initial value of the state. useState methods returns a destructured array. setCount is defined by useState. Just pass the newer value 
