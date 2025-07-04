@@ -10,7 +10,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 function App(){
   return(
     <BrowserRouter>  
-    <nav class="navbar bg-body-tertiary">
+    <nav class="navbar bg-body-tertiary" width="50px">
       <div class="container-fluid">
         <Link class="navbar-brand" to="/">Courses</Link> |
         <Link class="navbar-brand" to="/posts">Posts</Link> |
