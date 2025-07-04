@@ -1,3 +1,5 @@
 Reconciliation in React, in diffing algo, or something
 
 Keep the code as modular as possible. As for navbar in the App component you should create a header component and then just instantiate the header component in App component
+
+Routing parameters

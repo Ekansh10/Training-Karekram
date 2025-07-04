@@ -16,7 +16,7 @@ function App(){
       <Route path="/" Component={ListOfCourses}/>
       <Route path="/posts" Component={Posts}/>
       <Route path="/counter" Component={Counter}/>
-      <Route path="/coursedetails" Component={CourseDetails}/>
+      <Route path="/coursedetails/:id" Component={CourseDetails}/> {/* Routing Parameter */}
       <Route
       path="*" // anything else
       element={

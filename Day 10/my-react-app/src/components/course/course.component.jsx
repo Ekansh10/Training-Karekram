@@ -1,6 +1,6 @@
 import React, { Component, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import Rating from "../rating/rating";
 
 // Class component for App
 
@@ -49,24 +49,19 @@ import { Link } from "react-router-dom";
 // Functional Component for App
 
 function Course(props){
-    let stars = props.coursedetails.rating;
-    let starArray = [];
-    for (let i = 0; i < stars; i++) {
-      starArray.push(<i className="fa-solid fa-star" key={i} style={{ color: "gold" }}></i>);
-    }
 
   const[currLikes, setCurrLikes] = useState(props.coursedetails.likes);
   
     return (
     <div className="col-md-4">
       <div className="card">
-        <Link to ="/coursedetails">
+        <Link to ={`/coursedetails/${props.coursedetails.id}`}>
         <img src={props.coursedetails.imageUrl} className="card-img-top" alt="" width="200px"/>
         </Link>
         
         <h1 className="card-title">{props.coursedetails.title}</h1>
         <p className="card-text">₹ {props.coursedetails.price}</p>
-        <p className="card-text">Rating : {starArray}</p>
+        <div className="card-text">Rating : <Rating noofstars={props.coursedetails.rating}/></div>
 
         <button
         onClick={()=>setCurrLikes(currLikes + 1)
