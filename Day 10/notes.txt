@@ -6,3 +6,24 @@ Routing parameters
 
 React with TS
 
+Node uses JS event-loop
+
+v8 engine fastest js engine, used in chrome
+
+when using setTimeout like webApis, we use Node js apis, which internally uses C,C++ libraries like libuv for kernal level access like file system, os access
+
+but can use fetch api or anything specific to browser/webApis
+
+Node is a executable file which runs our js code
+REPL(Read, Evalute, PRint, Loop)
+
+with just node we enter into repl mode
+
+node add.js // here node exe file will execute the add.js file. But here code will not loop unless we do it within add.js
+Node is a runtime, used to create web apps(Server side applications), rich set of tools which can be build on top of node.
+
+
+Module in Node:
+built-in
+custom
+npm
