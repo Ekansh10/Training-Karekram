@@ -6,11 +6,11 @@ import Message from './components/message/message'
 
 function App() {
   const [count, setCount] = useState(0)
-
+  let messageOne = {msg:"Hello", to:"Pune", from:"Nagpur"};
   return (
     <div>
 
-      <Message msg={"heloo"}/>
+      <Message msgdetails = {messageOne} />
     </div>
   )
 }

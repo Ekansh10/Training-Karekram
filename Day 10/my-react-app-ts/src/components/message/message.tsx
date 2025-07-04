@@ -1,14 +1,19 @@
 import React, {type FC} from "react";
 
+type MessageModal ={
+    msg:string;
+    to:string;
+    from:string;
+}
 type MessageType ={
-    msg:String,
+    msgdetails:MessageModal,
 }
 
 const Message: FC<MessageType> = (props: MessageType) => {
     return(
         <div>
             <h1>
-            {props.msg};
+            {props.msgdetails.msg}
             </h1>
         </div>
     )
