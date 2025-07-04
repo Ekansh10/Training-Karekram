@@ -27,3 +27,12 @@ Module in Node:
 built-in
 custom
 npm
+
+with export default we can have only one default export for a Module(export default add)
+but can have multiple name exports (export substract, export multiply)
+
+for every request server do the following:
+LOCATE THE file, read the content of the file and send back the stream of the content back to the client
+
+
+
