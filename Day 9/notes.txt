@@ -51,3 +51,8 @@ Types of Hooks: (React version 16.8 onwards)
 
 link component avoids reloading page
 
+Routers helps to keep web page a Single page application(Client Side Routing)
+
+When component is removed it is called Unmouting phase.
+
+
