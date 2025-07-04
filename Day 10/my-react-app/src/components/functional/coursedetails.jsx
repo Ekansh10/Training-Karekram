@@ -27,6 +27,8 @@ function CourseDetails(props){
                     <h1 className="card-title">{course.title}</h1>
                     <p className="card-text">₹ {course.price}</p>
                     <div className="card-text">Rating : <Rating noofstars={course.rating} /></div>
+                    <br />
+                    <p className="card-text"> <strong>Description: </strong> <br/> {course.description} </p>
                 </div>
             </div>
         </div>
