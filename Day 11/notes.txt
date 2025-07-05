@@ -99,3 +99,14 @@ famous one is mongoose
 
 client <-> NODE <-> ODM <-> Mongodb
 
+CORS . browser blocks the request. so in the header of the response from the server we enable a specific whitelisted ips only.
+or can be done to all the ips by using cors middleware to be app.use(cors());
+
+
+prop drilling A -> B -> ..... -> Z
+
+context API (to share data between components)(types of data if the )
+-> Provider
+-> Consumer
+
+SaaS for css

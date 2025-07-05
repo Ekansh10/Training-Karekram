@@ -1,6 +1,7 @@
 import React, { Component, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Rating from "../rating/rating";
+import axios from 'axios';
 
 // Class component for App
 
@@ -69,6 +70,19 @@ function Course(props){
         className="btn btn-primary" 
         >
         <i className="fa-solid fa-thumbs-up" width="100px" height="10px"></i> {currLikes}</button>
+        
+        
+        <button className="fa-solid fa-trash"
+        onClick={async () =>{
+          const res = await axios.delete(
+            `http://localhost:3000/courses/delete/${props.coursedetails.id}`
+          );
+          if(res.status && props.coursedetails.deletecourse){
+            props.coursedetails.deletecourse(props.coursedetails.id);
+          }
+        }
+        }></button>
+        
       </div>
     </div>
     );
