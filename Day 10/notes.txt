@@ -12,7 +12,7 @@ v8 engine fastest js engine, used in chrome
 
 when using setTimeout like webApis, we use Node js apis, which internally uses C,C++ libraries like libuv for kernal level access like file system, os access
 
-but can use fetch api or anything specific to browser/webApis
+but cannot use fetch api or anything specific to browser/webApis
 
 Node is a executable file which runs our js code
 REPL(Read, Evalute, PRint, Loop)
