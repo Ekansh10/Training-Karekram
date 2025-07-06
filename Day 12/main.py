@@ -20,4 +20,16 @@ nums.sort(reverse=True)
 print(nums)
 
 
+def get_sum(*nums):
+    t = 0
+    print(type(nums))
+    for n in nums:
+        t += n
+    return t
+
+
+
+print(get_sum(2,3))
+print(get_sum(2,3,4))
+
 

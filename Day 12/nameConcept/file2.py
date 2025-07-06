@@ -9,3 +9,5 @@ print(__name__)
 
 
 ## if we print the __name__ in the file itself it says __main__ and if we import the file and then print the imported file __name__ 
+
+# __pycache__ is a directory automatically created by the Python interpreter to store compiled bytecode files of Python modules. 
