@@ -33,3 +33,12 @@ print(get_sum(2,3))
 print(get_sum(2,3,4))
 
 
+def printObj(**objs):
+
+    print(type(objs))
+    for obj in objs:
+        print(obj)
+        print(objs[obj])
+
+
+printObj(name="Ekansh", age=20, skill="python")
