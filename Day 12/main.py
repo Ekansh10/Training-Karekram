@@ -41,9 +41,5 @@ def printObj(**objs):
         print(objs[obj])
 
 
-<<<<<<< HEAD
 printObj(1,2,3,name="Ekansh", age=20, skill="python") 
 # positional arguments should be passed first before keyword arguments
-=======
-printObj(name="Ekansh", age=20, skill="python")
->>>>>>> refs/remotes/origin/master
