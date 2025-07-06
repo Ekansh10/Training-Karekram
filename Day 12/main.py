@@ -43,3 +43,4 @@ def printObj(**objs):
 
 printObj(1,2,3,name="Ekansh", age=20, skill="python") 
 # positional arguments should be passed first before keyword arguments
+
