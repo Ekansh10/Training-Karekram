@@ -20,4 +20,7 @@ lst = [1,2,10,4]
 
 res = functools.reduce(lambda x, y: (y, x[1] and x[0] <= y) if type(x) == tuple else (y, x <= y), lst)
 
-print(res)
+print(res[1])
+
+res2 = functools.reduce(lambda x, y: (x[0]+y, x[1]+1) if (type(x) == tuple) else (x+y, 2), lst)
+print(res2[0] / res2[1])
