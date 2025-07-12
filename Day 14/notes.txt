@@ -1,0 +1,69 @@
+MYSQL in ubuntu
+sudo apt install mysql-server
+mysql --version
+sudo service mysql status
+sudo mysql_secure_installation
+sudo systemctl start mysql
+sudo systemctl enable mysql
+
+
+sudo mysql -u root -p
+root
+
+SHOW DATABASES;
+
+
+1. Create a user
+
+sql
+CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
+To allow connections from any host:
+
+sql
+CREATE USER 'username'@'%' IDENTIFIED BY 'password';
+2. Grant privileges to the user
+
+sql
+GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost';
+For a specific database:
+
+sql
+GRANT ALL PRIVILEGES ON dbname.* TO 'username'@'localhost';
+3. Apply privilege changes
+
+sql
+FLUSH PRIVILEGES;
+4. Create a database
+
+sql
+CREATE DATABASE mydatabase;
+Or, to avoid errors if it already exists:
+
+sql
+CREATE DATABASE IF NOT EXISTS mydatabase;
+5. Select (use) a database
+
+sql
+USE mydatabase;
+6. Check which database you are currently using
+
+sql
+SELECT DATABASE();
+7. Create a table
+
+sql
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(255) UNIQUE
+);
+Replace users, id, name, and email with your desired table and column names, and adjust data types as needed.
+
+8. See all tables in the current database
+
+sql
+SHOW TABLES;
+Replace placeholders (like username, password, mydatabase, etc.) with your actual values.
+
+
+
