@@ -43,6 +43,14 @@ public class BasicHeaps {
         System.out.println("After MIN HEAP Deletion");
         deleteFromMinHeap(minHeap);
         printHeap(minHeap);
+
+        System.out.println();
+        System.out.println("Before MAX HEAP Deletion");
+        printHeap(maxHeap);
+        System.out.println();
+        System.out.println("After MAX HEAP Deletion");
+        deleteFromMaxHeap(maxHeap);
+        printHeap(maxHeap);
     }
     static int getParent(int idx){
         if(idx == 1 || idx == 0){
@@ -107,6 +115,20 @@ public class BasicHeaps {
         arr.set(currIdx, lastval);
         while(arr.get(getLeft(currIdx, arr)) < arr.get(currIdx) || arr.get(getRight(currIdx, arr)) < arr.get(currIdx)){
             if(arr.get(getLeft(currIdx, arr)) > arr.get(getRight(currIdx, arr))){
+                swap(arr, currIdx, getRight(currIdx, arr));
+                currIdx = getRight(currIdx, arr);
+            }else{
+                swap(arr, currIdx, getLeft(currIdx, arr));
+                currIdx = getLeft(currIdx, arr);
+            }
+        }
+    }
+    static void deleteFromMaxHeap(ArrayList<Integer> arr){
+        int lastval = arr.remove(arr.size()-1);
+        int currIdx = 0;
+        arr.set(currIdx, lastval);
+        while(arr.get(getLeft(currIdx, arr)) > arr.get(currIdx) || arr.get(getRight(currIdx, arr)) > arr.get(currIdx)){
+            if(arr.get(getLeft(currIdx, arr)) < arr.get(getRight(currIdx, arr))){
                 swap(arr, currIdx, getRight(currIdx, arr));
                 currIdx = getRight(currIdx, arr);
             }else{
