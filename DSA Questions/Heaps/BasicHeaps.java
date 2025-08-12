@@ -5,6 +5,7 @@ public class BasicHeaps {
         ArrayList<Integer> minHeap = new ArrayList<>();
         ArrayList<Integer> maxHeap = new ArrayList<>();
 
+        System.out.println("MIN HEAP");
         insertIntoMinHeap(minHeap, 8);
         printHeap(minHeap);
         insertIntoMinHeap(minHeap, 7);
@@ -18,6 +19,21 @@ public class BasicHeaps {
         printHeap(minHeap);
         insertIntoMinHeap(minHeap, 5);
         printHeap(minHeap);
+
+        System.out.println("MAX HEAP");
+        insertIntoMaxHeap(maxHeap, 8);
+        printHeap(maxHeap);
+        insertIntoMaxHeap(maxHeap, 7);
+        printHeap(maxHeap);
+        insertIntoMaxHeap(maxHeap, 9);
+        insertIntoMaxHeap(maxHeap, 10);
+        insertIntoMaxHeap(maxHeap, 11);
+        insertIntoMaxHeap(maxHeap, 12);
+        insertIntoMaxHeap(maxHeap, 14);
+        insertIntoMaxHeap(maxHeap, 13);
+        printHeap(maxHeap);
+        insertIntoMaxHeap(maxHeap, 5);
+        printHeap(maxHeap);
 
     }
     static int getParent(int idx){
